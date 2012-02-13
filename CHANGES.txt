@@ -1,0 +1,40 @@
+1.1 (10/16/2007)
+
+   Namespace declarations in the root configuration file can now leave
+   out the section declaration. In this case the task configuration must
+   provide a section named [default_namespace], which will be selected.
+
+   Fixed an error in the SkelCopier class which allowed recursion into
+   directories that were supposed to be omitted.
+
+   Fixed an error in the SkelCopier class which made it impossible to
+   copy directory trees deeper than one level.
+
+   Added a "destructive" option to the SkelCopier command. The SkelCopier
+   would nornally skip any file where the destination already existed.
+   The "destructive" flag will overwrite existing files.
+
+   Removed documentation for "Fetch", it was incorrect.  The Fetch
+   command is too magical to document and should likely be removed
+   from commandlib.
+
+   Fixed incorrect documentation: docs said there should be a [defaults]
+   section in the root.ini file, it should have said there should be
+   a [globals] section in the root.ini file.
+
+   SkelCopier in commandlib did not work properly: it build incorrect
+   target file paths.
+
+1.0 (04/15/2007)
+
+   Allow Fetch task to unpack zip files.
+
+   New builtin global replacement value: 'platform', which is the value
+   of distutils.util.get_platform() if distutils is installed.
+
+   Fixed a bug in the guts of the postorder machinery to not generate
+   too many duplicate tasks.
+
+0.1 (02/04/2007)
+
+   Initial release
